@@ -20,4 +20,9 @@ class SurveyController extends Controller
     {
         return view("users.finalisation");
     }
+
+    public function administration()
+    {
+        return view("admin.administration");
+    }
 }

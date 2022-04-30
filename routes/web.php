@@ -26,6 +26,11 @@ Route::get('contact', [SurveyController::class, 'contact'])->name('contact');
 Route::get('finalisation', [SurveyController::class, 'finalisation'])->name('finalisation');
 
 
+
+
+Route::get('administration', [SurveyController::class, 'administration'])->name('administration');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

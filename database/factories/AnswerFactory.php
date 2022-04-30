@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SurveyFactory extends Factory
+class AnswerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -34,6 +34,7 @@ class SurveyFactory extends Factory
             'record_shows' => $this->faker->randomDigit(),
             'exclusive_games' => $this->faker->randomDigit(),
             'dream_features' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
+            'unique_token' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
         ];
     }
 }

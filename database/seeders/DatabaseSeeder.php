@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Survey;
+use App\Models\Type;
+use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Survey::factory(20)->create();
+        Answer::factory(20)->create();
+        Type::factory(3)->create();
+        Question::factory(20)->create();
     }
 }

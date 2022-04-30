@@ -35,7 +35,7 @@ class CreateAnswersTable extends Migration
             $table->integer("record_shows");
             $table->integer("exclusive_games");
             $table->string("dream_features", 255);
-            $table->rememberToken();
+            $table->string("unique_token");
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles bootstrap -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <meta name="description" content="@yield("admin_description")">
     <title>BigScreen - @yield("admin_title")</title>
 </head>

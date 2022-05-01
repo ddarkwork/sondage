@@ -57,12 +57,8 @@ Tableau de bord
         /* END BODY CSS */
     </style>
     <h2>Liste des réponses aux questions</h2>
-
-
-    {{-- @foreach ($questions as $question)
-      @foreach ($reponses as $reponse) --}}
       
-      @foreach ($reponses as $reponse)
+    @foreach ($reponses as $reponse)
 
     <table class="GeneratedTable">
       <thead>
@@ -113,9 +109,8 @@ Tableau de bord
       </tbody>
       
     </table>
-    @endforeach
 
-    {{-- @endforeach
-    @endforeach --}}
+    @endforeach
+    
     @endsection
 @endsection

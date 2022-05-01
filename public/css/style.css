@@ -1,5 +1,26 @@
+/* BEGIN LOGO ADMIN CSS */
 .logo_position 
 {
     margin-top: 50%;
     margin-bottom: 10%;
 }
+/* END LOGO ADMIN CSS */
+
+.container-fluid {
+    background-color: #141416;
+}
+
+.color_col {
+    background-color: #23262F;
+}
+
+.color_link {
+    color: #9757D7;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.color_link:hover {
+    color: #5400FF;
+}
+

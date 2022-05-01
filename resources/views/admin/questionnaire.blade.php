@@ -12,13 +12,13 @@ Tableau de bord
     @extends("components.admin_sidebar")
 
     @section("sidebar")
-        <h1>Accueil</h1>
+        <h1>Le tableau de bord</h1>
 
-        {{-- <h2>QUESTIONS</h2>
+        <h2>QUESTIONS</h2>
         @foreach ($questions as $question)
             <div>Questions {{ $question->id }}/20</div>
             <div>{{ $question->title }}</div>
             <br>
-        @endforeach --}}
+        @endforeach
     @endsection
 @endsection

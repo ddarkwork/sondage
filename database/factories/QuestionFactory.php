@@ -16,7 +16,7 @@ class QuestionFactory extends Factory
     {
         return [
             'type_id' => Type::inRandomOrder()->first()->id,
-            'title' => $this->faker->word(),
+            'title' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
         ];
     }
 }

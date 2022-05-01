@@ -12,7 +12,7 @@ Tableau de bord
     @extends("components.admin_sidebar")
 
     @section("sidebar")
-        <h1>Accueil</h1>
+        <h1>Réponses</h1>
 
         {{-- <h2>QUESTIONS</h2>
         @foreach ($questions as $question)

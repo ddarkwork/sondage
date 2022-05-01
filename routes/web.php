@@ -30,6 +30,10 @@ Route::get('finalisation', [SurveyController::class, 'finalisation'])->name('fin
 
 Route::get('administration', [SurveyController::class, 'administration'])->name('administration');
 
+Route::get('questionnaire', [SurveyController::class, 'questionnaire'])->name('questionnaire');
+
+Route::get('reponses', [SurveyController::class, 'reponses'])->name('reponses');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

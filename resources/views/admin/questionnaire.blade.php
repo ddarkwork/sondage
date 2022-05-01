@@ -42,7 +42,19 @@ Tableau de bord
             padding: 10px;
         }
         /* END TABLE ADMIN CSS */
+        
+        /* BEGIN BODY CSS */
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        marquee {
+            color: white
+        }
+        /* END BODY CSS */
     </style>
+    <h2>Liste des questions</h2>
     
     <table class="GeneratedTable">
       <thead>

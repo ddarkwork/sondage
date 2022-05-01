@@ -47,6 +47,7 @@ Tableau de bord
         h2 {
             color: white;
             text-align: center;
+            padding: 15px;
         }
 
         marquee {
@@ -59,7 +60,7 @@ Tableau de bord
     <table class="GeneratedTable">
       <thead>
         <tr>
-          <th>Numéro de la question</th>
+          <th>Numéro de la question ( . . . /20 )</th>
           <th>Intitulé de la question</th>
           <th>Type de la question</th>
         </tr>

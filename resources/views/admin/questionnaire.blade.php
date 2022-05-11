@@ -79,7 +79,7 @@ Tableau de bord
           </td>
           <td>
             @foreach ($questions as $question)
-                <div>{{ $question->type->title }}</div>
+                <div>{{ $question->type }}</div>
             @endforeach
           </td>
         </tr>

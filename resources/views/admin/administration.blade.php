@@ -9,16 +9,60 @@ Tableau de bord
 @endsection
 
 @section("admin_content")
-    @extends("components.admin_sidebar")
+@extends("components.admin_sidebar")
 
-    @section("sidebar")
-        <h1>Accueil</h1>
+@section("sidebar")
 
-        {{-- <h2>QUESTIONS</h2>
-        @foreach ($questions as $question)
-            <div>Questions {{ $question->id }}/20</div>
-            <div>{{ $question->title }}</div>
-            <br>
-        @endforeach --}}
-    @endsection
+<style>
+    /* BEGIN BODY CSS */
+    h2 {
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* END BODY CSS */
+</style>
+
+<h2>Tableau de bord</h2>
+
+{{-- <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+    
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script> --}}
+
+@endsection
 @endsection

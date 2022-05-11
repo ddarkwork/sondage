@@ -12,13 +12,19 @@ class Question extends Model
     use HasFactory;
 
     protected $fillable = [
-        'type_id',
+        'type',
         'title',
+        'propositions',
     ];
 
-    public function type()
+    /**
+     * Get all of the answers for the Question
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function answers(): HasMany
     {
-        return $this->belongsTo(Type::class, "type_id");
+        return $this->hasMany(Answer::class, 'answer_id');
     }
 
 }

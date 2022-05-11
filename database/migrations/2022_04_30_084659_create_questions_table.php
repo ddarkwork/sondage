@@ -15,8 +15,9 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('type_id')->constrained();
-            $table->string("title");
+            $table->enum('type', ['A', 'B', 'C']);
+            $table->text("title", 255);
+            $table->string("propositions")->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,47 @@ class AnswerSeeder extends Seeder
      */
     public function run()
     {
-        Answer::factory(20)->create();
-        Identify::factory(20)->create();
+        Identify::factory()->count(5)->create()->each(function($identify){
+            $faker = Factory::create();
+            $questions = Question::all();
+
+            foreach ($questions as $key => $question) {
+                switch ($question->type) {
+                    case 'A':
+                        $propositions = json_decode($question->propositions);
+                        $title = $propositions[rand(0, count($propositions) - 1)];
+                        $newAnswer = Answer::create([
+                            'title' => $title,
+                            'question_id' => $question->id,
+                            'identify_id' => $identify->id,
+                        ]);
+                        break;
+                    case 'B':
+                        $randomAnswer = $faker->sentence($nbWords = 6, $variableNbWords = true);
+                        $newAnswer = Answer::create([
+                            'title' => $randomAnswer,
+                            'question_id' => $question->id,
+                            'identify_id' => $identify->id,
+                        ]);
+                        break;
+                    case 'C':
+                        $randomNumber = rand(1, 5);
+                        $newAnswer = Answer::create([
+                            'title' => $randomNumber,
+                            'question_id' => $question->id,
+                            'identify_id' => $identify->id,
+                        ]);
+                        break;
+                    default:
+                        break;
+                }
+                $newAnswer->save();
+            }
+
+            // On valide le identify
+            $identify->status = true;
+            $identify->save();
+        });
+        
     }
 }

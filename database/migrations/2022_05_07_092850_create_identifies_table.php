@@ -15,8 +15,9 @@ class CreateIdentifiesTable extends Migration
     {
         Schema::create('identifies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('answer_id')->constrained();
-            $table->string('token');
+            $table->string('url');
+            $table->boolean('status')->default(false);
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
@@ -29,15 +30,5 @@ class CreateIdentifiesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('identifies');
-    }
-
-    /**
-     * Get the answer that owns the 2022_05_07_092850_create_identifies_table
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function answer(): BelongsTo
-    {
-        return $this->belongsTo(Answer::class, "answer_id");
     }
 }

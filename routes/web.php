@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SurveyController;
 
 /*
@@ -28,11 +29,11 @@ Route::get('finalisation', [SurveyController::class, 'finalisation'])->name('fin
 
 
 
-Route::get('administration', [SurveyController::class, 'administration'])->name('administration');
+Route::get('administration', [AdminController::class, 'administration'])->name('administration');
 
-Route::get('questionnaire', [SurveyController::class, 'questionnaire'])->name('questionnaire');
+Route::get('questionnaire', [AdminController::class, 'questionnaire'])->name('questionnaire');
 
-Route::get('reponses', [SurveyController::class, 'reponses'])->name('reponses');
+Route::get('reponses', [AdminController::class, 'reponses'])->name('reponses');
 
 
 Route::get('/dashboard', function () {

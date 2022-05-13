@@ -58,59 +58,27 @@ Tableau de bord
     </style>
     <h2>Liste des réponses aux questions</h2>
       
-    @foreach ($reponses as $reponse)
+    
 
-    <table class="GeneratedTable">
-      <thead>
-        <tr>
-          <th>Numéro de la question ( . . . /20 )</th>
-          <th>Intitulé de la question</th>
-          <th>Réponse à la question</th>
-        </tr>
-      </thead>
+    @foreach ($identifies as $identify)
+      <table class="GeneratedTable">
+          <thead>
+              <th>Q°</th>
+              <th>Question</th>
+              <th>Réponse</th>
+          </thead>
+          <tbody>
+              @foreach ($identify->answers as $answer)
+                  <tr>
+                      <td>{{$answer->question->id}}</td>
+                      <td class="label">{{$answer->question->title}}</td>
+                      <td>{{$answer->title}}</td>
+                  </tr>
+              @endforeach
+          </tbody>
+      </table>
+  @endforeach
 
-      
-      
-      <tbody>
-        <tr>
-          <td>
-            @foreach ($questions as $question)
-                <div>Question {{ $question->id }}/20</div>
-            @endforeach
-          </td>
-          <td>
-            @foreach ($questions as $question)
-                <div>{{ $question->title }}</div>
-            @endforeach
-          </td>
-          <td>
-                <div>{{ $reponse->email }}</div>
-                <div>{{ $reponse->age }}</div>
-                <div>{{ $reponse->sex }}</div>
-                <div>{{ $reponse->family_members }}</div>
-                <div>{{ $reponse->job }}</div>
-                <div>{{ $reponse->used_vr }}</div>
-                <div>{{ $reponse->vr_content_store }}</div>
-                <div>{{ $reponse->futur_vr }}</div>
-                <div>{{ $reponse->bs_users }}</div>
-                <div>{{ $reponse->bs_use }}</div>
-                <div>{{ $reponse->bs_pics_score }}</div>
-                <div>{{ $reponse->bs_comfort_score }}</div>
-                <div>{{ $reponse->bs_network_score }}</div>
-                <div>{{ $reponse->bs_3d_score }}</div>
-                <div>{{ $reponse->bs_audio_score }}</div>
-                <div>{{ $reponse->bs_notif }}</div>
-                <div>{{ $reponse->smartphone_use }}</div>
-                <div>{{ $reponse->record_shows }}</div>
-                <div>{{ $reponse->exclusive_games }}</div>
-                <div>{{ $reponse->dream_features }}</div>
-          </td>
-        </tr>
-      </tbody>
-      
-    </table>
-
-    @endforeach
     
     @endsection
 @endsection

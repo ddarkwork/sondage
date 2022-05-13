@@ -14,55 +14,55 @@ Tableau de bord
 @section("sidebar")
 
 <style>
-    /* BEGIN BODY CSS */
-    h2 {
-        color: white;
-        text-align: center;
-        padding: 15px;
-    }
-
-    /* END BODY CSS */
+  /* BEGIN BODY CSS */
+  h2 {
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* END BODY CSS */
 </style>
 
 <h2>Tableau de bord</h2>
 
-{{-- <div>
-    <canvas id="myChart"></canvas>
-  </div>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <script>
-    const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
+<script>
+  const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  ];
   
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
-    };
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
   
-    const config = {
-      type: 'line',
-      data: data,
-      options: {}
-    };
-    
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script> --}}
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  
+  const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+  );
+</script>
 
 @endsection
 @endsection

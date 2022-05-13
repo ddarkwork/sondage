@@ -15,6 +15,7 @@ Tableau de bord
 
     <style>
         /* BEGIN TABLE ADMIN CSS */
+
         table.GeneratedTable {
             width: 100%;
             background-color: transparent;
@@ -57,34 +58,22 @@ Tableau de bord
     </style>
     <h2>Liste des questions</h2>
     
-    <table class="GeneratedTable">
-      <thead>
-        <tr>
-          <th>Numéro de la question ( . . . /20 )</th>
-          <th>Intitulé de la question</th>
-          <th>Type de la question</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            @foreach ($questions as $question)
-                <div>Questions {{ $question->id }}/20</div>
-            @endforeach
-          </td>
-          <td>
-            @foreach ($questions as $question)
-                <div>{{ $question->title }}</div>
-            @endforeach
-          </td>
-          <td>
-            @foreach ($questions as $question)
-                <div>{{ $question->type }}</div>
-            @endforeach
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="GeneratedTable">
+          <thead>
+              <th>Numéro de la question</th>
+              <th>Intitulé de la question</th>
+              <th>Type de la question</th>
+          </thead>
+          <tbody>
+              @foreach ($questions as $question)
+                  <tr>
+                      <td>{{$question->id}}</td>
+                      <td class="label">{{$question->title}}</td>
+                      <td>{{$question->type}}</td>
+                  </tr>
+              @endforeach
+          </tbody>
+      </table>
 
     @endsection
 @endsection

@@ -17,14 +17,8 @@ class Question extends Model
         'propositions',
     ];
 
-    /**
-     * Get all of the answers for the Question
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function answers(): HasMany
-    {
-        return $this->hasMany(Answer::class, 'answer_id');
+    public function answers(){
+        return $this->hasMany(Answer::class);
     }
 
 }

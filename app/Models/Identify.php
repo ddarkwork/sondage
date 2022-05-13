@@ -10,12 +10,11 @@ class Identify extends Model
 {
     use HasFactory;
 
-    public function answer()
-    {
-        return $this->belongsTo(Answer::class, "answer_id");
-    }
-
     protected $fillable = [
-        "token",
+        'url',
     ];
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
 }

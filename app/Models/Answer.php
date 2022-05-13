@@ -11,24 +11,20 @@ class Answer extends Model
 {
     use HasFactory;
 
-    public function question()
-    {
-        return $this->belongsTo(Question::class, "question_id");
-    }
-
     protected $fillable = [
-        "question_id",
-        "title",
+        'title',
+        'question_id',
+        'identify_id',
     ];
+    public $timestamps = false;
 
-    /**
-     * Get the identify associated with the Answer
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function identify(): HasOne
-    {
-        return $this->hasOne(Identify::class, 'identify_id');
+    public function question(){
+
+        return $this->belongsTo(Question::class);
+    }
+    public function identify(){
+
+        return $this->belongsTo(Identify::class);
     }
 
 }

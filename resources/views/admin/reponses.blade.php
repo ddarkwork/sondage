@@ -63,9 +63,9 @@ Tableau de bord
     @foreach ($identifies as $identify)
       <table class="GeneratedTable">
           <thead>
-              <th>Q°</th>
-              <th>Question</th>
-              <th>Réponse</th>
+              <th>Numéro de la question</th>
+              <th>Intitulé de la question</th>
+              <th>Intitué de la réponse</th>
           </thead>
           <tbody>
               @foreach ($identify->answers as $answer)

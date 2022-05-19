@@ -45,7 +45,7 @@ Sondage
                 {{-- if type==C --}}
                 @if ($question->type == 'C')
                 <div>
-                    <input type="number" class="form-control bg-dark text-light" name="reponse[{{$question->id}}]" min=1 max=5 required>
+                    <input type="number" class="form-control bg-dark text-light" name="reponse[{{$question->id}}]" min=1  required>
                 </div>
                 @endif
 

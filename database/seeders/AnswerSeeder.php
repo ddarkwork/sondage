@@ -24,7 +24,7 @@ class AnswerSeeder extends Seeder
             foreach ($questions as $key => $question) {
                 switch ($question->type) {
                     case 'A':
-                        $propositions = $question->propositions;
+                        $propositions = $question->propositionsgit ;
                         $title = $propositions[rand(0, count($propositions) - 1)];
                         $newAnswer = Answer::create([
                             'title' => $title,

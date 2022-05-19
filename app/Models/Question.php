@@ -16,6 +16,9 @@ class Question extends Model
         'title',
         'propositions',
     ];
+    protected $casts = [
+        'propositions' => 'json'
+    ];
 
     public function answers(){
         return $this->hasMany(Answer::class);

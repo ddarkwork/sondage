@@ -24,7 +24,7 @@ Route::get('/', [SurveyController::class, 'index'])->name('index');
 
 Route::get('contact', [SurveyController::class, 'contact'])->name('contact');
 
-Route::get('finalisation', [SurveyController::class, 'finalisation'])->name('finalisation');
+Route::get('finalisation/{token?}', [SurveyController::class, 'finalisation'])->name('finalisation');
 
 
 
@@ -35,6 +35,9 @@ Route::get('questionnaire', [AdminController::class, 'questionnaire'])->name('qu
 
 Route::get('reponses', [AdminController::class, 'reponses'])->name('reponses');
 
+Route::get('reponse/{token}', [SurveyController::class, 'reponse'])->name('reponse');
+
+Route::post('store', [SurveyController::class, 'store'])->name('questionnaire.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

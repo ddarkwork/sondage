@@ -24,7 +24,7 @@ class AnswerSeeder extends Seeder
             foreach ($questions as $key => $question) {
                 switch ($question->type) {
                     case 'A':
-                        $propositions = json_decode($question->propositions);
+                        $propositions = $question->propositions;
                         $title = $propositions[rand(0, count($propositions) - 1)];
                         $newAnswer = Answer::create([
                             'title' => $title,
@@ -58,6 +58,6 @@ class AnswerSeeder extends Seeder
             $identify->status = true;
             $identify->save();
         });
-        
+
     }
 }

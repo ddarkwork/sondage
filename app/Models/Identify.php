@@ -11,7 +11,7 @@ class Identify extends Model
     use HasFactory;
 
     protected $fillable = [
-        'url',
+        'url','email'
     ];
 
     public function answers(){

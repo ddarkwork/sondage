@@ -29,11 +29,11 @@ Route::get('finalisation/{token?}', [SurveyController::class, 'finalisation'])->
 
 
 
-Route::get('administration', [AdminController::class, 'administration'])->name('administration');
+Route::get('administration', [AdminController::class, 'administration'])->name('administration')->middleware(['auth']);
 
-Route::get('questionnaire', [AdminController::class, 'questionnaire'])->name('questionnaire');
+Route::get('questionnaire', [AdminController::class, 'questionnaire'])->name('questionnaire')->middleware(['auth']);
 
-Route::get('reponses', [AdminController::class, 'reponses'])->name('reponses');
+Route::get('reponses', [AdminController::class, 'reponses'])->name('reponses')->middleware(['auth']);
 
 Route::get('reponse/{token}', [SurveyController::class, 'reponse'])->name('reponse');
 

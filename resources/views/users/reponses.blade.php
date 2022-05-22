@@ -27,8 +27,8 @@
                 <p class="card-text">{{$reponse->question['title']}}</p>
 
 
-                <div>
-                    <input type="text" class="form-control bg-dark text-light" value="{{$reponse->title}}" >
+                <div >
+                    <span class=" bg-dark text-info">{{$reponse->title}}</span>
                 </div>
 
 

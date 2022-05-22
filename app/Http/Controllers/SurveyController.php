@@ -52,7 +52,6 @@ class SurveyController extends Controller
         ]);
 
         if ($validator->fails()) {
-            dd($validator);
             session()->flash('error', 'Veuillez vérifier votre email');
             DB::rollBack();
             return back();

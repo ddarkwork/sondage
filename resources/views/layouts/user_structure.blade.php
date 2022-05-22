@@ -14,6 +14,16 @@
     <title>BigScreen - @yield("title")</title>
 </head>
 <body class="bg-dark text-light">
+    @if (session()->has('error'))
+      <div class="alert alert-danger">
+        {{ session()->get('error') }}
+      </div>
+    @endif
+    @if (session()->has('succes'))
+    <div class="alert alert-success">
+      {{ session()->get('succes') }}
+    </div>
+  @endif
     <div class="container">
         @yield("content")
     </div>

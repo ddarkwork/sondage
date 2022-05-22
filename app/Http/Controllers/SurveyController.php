@@ -34,8 +34,7 @@ class SurveyController extends Controller
     public function reponse($token)
     {
 
-        $url=url('/reponse').'/'.$token;
-        $reponses=Identify::where("url",$url)->first()->answers;
+        $reponses=Identify::where("url",$token)->first()->answers;
         return view("users.reponses", compact("reponses"));
     }
 
@@ -50,13 +49,14 @@ class SurveyController extends Controller
         $email=$request->reponse[Question::where('title','Votre adresse mail')->first()->id];
         $identify=new Identify();
         $identify->email=$email;
-        $identify->url=url('/reponse').'/'.$token;
+        $identify->url=$token;
         $identify->save();
         $questions = Question::all();
         foreach($questions as $question)
         {
             if($request->reponse[$question->id] == null)
             {
+                session()->flash('error', 'Veuillez vérifier votre réponse');
                 DB::rollBack();
                 return back();
             }
@@ -69,12 +69,14 @@ class SurveyController extends Controller
             }
         }
          DB::commit();
+         session()->flash('succes', 'Sondage rempli avec succès');
         return redirect()->route('finalisation',$token);
 
     }
     catch(\Exception $e)
     {
         DB::rollBack();
+        session()->flash('error', 'Veuillez vérifier votre email ou votre réponse');
         return back();
     }
     }

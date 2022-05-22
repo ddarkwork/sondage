@@ -7,6 +7,7 @@ use App\Models\Identify;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class SurveyController extends Controller
 {
@@ -46,6 +47,17 @@ class SurveyController extends Controller
         try{
         $token=$this->generateToken();
         DB::beginTransaction();
+        $validator = Validator::make($request->all(), [
+            'reponse.'.Question::where('title','Votre adresse mail')->first()->id => 'required|email|',
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator);
+            session()->flash('error', 'Veuillez vérifier votre email');
+            DB::rollBack();
+            return back();
+        }
+
         $email=$request->reponse[Question::where('title','Votre adresse mail')->first()->id];
         $identify=new Identify();
         $identify->email=$email;

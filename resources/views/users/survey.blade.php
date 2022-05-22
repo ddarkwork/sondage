@@ -54,7 +54,10 @@ Sondage
         </div>
         @endforeach
         {{-- end loop for --}}
-        <button type="submit">fin</button>
+        <div class="d-grid gap-2 mx-auto">
+
+            <button type="submit" class="btn btn-success btn-lg my-3 ">finaliser</button>
+        </div>
         </form>
     </div>
 @endsection
